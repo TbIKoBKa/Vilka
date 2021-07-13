@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=320, initial-scale=1">
+    <title>Интернет-магазин VILKA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://kit.fontawesome.com/30a2d2d064.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="bg-popup-low"></div>
+    <div class="bg-popup-high"></div>
+    <p class="header-msg"></p>
+
+    <div class="modal authorization">
+        <div class="modal-header">
+            <h1 class="modal-title">Вход</h1>
+            <div class="modal-close"><i class="fas fa-times" aria-hidden="true"></i></div>
+        </div>
+        <div class="modal-main">
+            <form>
+                <div class="modal-input">
+                    <label class="modal-input-label" for="login">Эл. почта или телефон</label>
+                    <input id="login" type="text" name="login" required>
+                </div>
+                <div class="modal-input">
+                    <label class="modal-input-label" for="auth-password">Пароль</label>
+                    <input id="auth-password" type="password" name="password" required>
+                </div>
+                <div class="modal-input modal-save">
+                    <div class="modal-checkbox">
+                        <input id="save" type="checkbox">
+                        <label for="save">Запомнить меня</label>
+                    </div>
+                    <button class="link ulink toRestorePassword" type="button">Напомнить пароль</button>
+                </div>
+                <input type="submit" class="aside-large_button button-submit" value="Войти">
+                <button class="link ulink toRegister">Зарегистрироваться</button>
+            </form>
+            <div class="modal-socs">
+                <p class="modal-socs-title">Войти как пользователь</p>
+                <button class="aside-large_button">Facebook</button>
+                <button class="aside-large_button">Google</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal registration">
+        <div class="modal-header">
+            <h1 class="modal-title">Регистрация</h1>
+            <div class="modal-close"><i class="fas fa-times" aria-hidden="true"></i></div>
+        </div>
+        <div class="modal-scroll-block">
+            <div class="modal-main">
+                <form>
+                    <div class="modal-input">
+                        <label class="modal-input-label" for="firstname">Имя</label>
+                        <input id="firstname" type="text" name="firstname">
+                    </div>
+                    <div class="modal-input">
+                        <label class="modal-input-label" for="secondname">Фамилия</label>
+                        <input id="secondname" type="text" name="secondname">
+                    </div>
+                    <div class="modal-input">
+                        <label class="modal-input-label" for="tel">Номер телефона</label>
+                        <input id="tel" type="tel" name="tel" value="+380" pattern="+380[0-9]{9}" required>
+                    </div>
+                    <div class="modal-input">
+                        <label class="modal-input-label" for="email">Эл. почта</label>
+                        <input id="email" type="email" name="email" required>
+                    </div>
+                    <div class="modal-input">
+                        <label class="modal-input-label" for="reg-password">Придумайте пароль</label>
+                        <input id="reg-password" type="password" name="password" required>
+                    </div>
+                    <p class="modal-input-label">
+                        Пароль должен быть не менее 6 символов, содержать цифры и латинские буквы,
+                        в том числе заглавные, и не должен совпадать с именем и эл. почтой
+                    </p>
+                    <p class="modal-input-label user-agreement">
+                        Регистрируясь, вы соглашаетесь с <a href="#" class="link">пользовательским соглашением</a>
+                    </p>
+                    <input type="submit" class="aside-large_button button-submit" value="Зарегистрироваться">
+                    <button class="link ulink toLogin">Я уже зарегистрирован</button>
+                </form>
+                <div class="modal-socs">
+                    <p class="modal-socs-title">Войти как пользователь</p>
+                    <button class="aside-large_button">Facebook</button>
+                    <button class="aside-large_button">Google</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="aside-menu">
+        <div class="aside-menu-header">
+            <img src="src/img/whitefontlogo.svg">
+            <div class="aside-menu-close"><i class="fas fa-times"></i></div>
+        </div>
+        <div class="aside-menu-main">
+            <div class="aside-authorize">
+                <div class="aside-authorize-icon"><i class="far fa-user"></i></div>
+                <div class="aside-authorize-buttons">
+                    <div>
+                        <button class="toLogin" type="button">Вход</button>
+                        <button class="toRegister" type="button">Регистрация</button>
+                    </div>
+                    <p>Авторизуйтесь для получения расширенных возможностей</p>
+                </div>
+            </div>
+            <a class="aside-premium">
+                <div>
+                    <p>PREMIUM</p>
+                    <p>Бесплатная доставка весь год</p>
+                </div>
+                <div>
+                    <i class="fas fa-angle-right"></i>
+                </div>
+            </a>
+            <ul class="aside-inner">
+                <li>
+                    <ul class="aside-large_buttons">
+                        <li class="aside-item"><button class="aside-large_button openCatalog-aside"><i class="fas fa-book"></i>Каталог товаров</button></li>
+                        <li class="aside-item"><button class="aside-large_button"><i class="fas fa-shopping-cart"></i>Корзина</button></li>
+                        <li class="aside-item"><button class="aside-large_button"><i class="fas fa-balance-scale"></i>Сравнение</button></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="aside-item aside-large_buttons">
+                        <li><button class="aside-large_button"><i class="far fa-question-circle"></i>Справочный центр</button></li>
+                        <li><button class="aside-large_button"><i class="fas fa-phone-alt"></i>+38 044 537-02-22</button></li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <ul class="aside-item aside-lang-city aside-inner">
+                <li>
+                    <span>Язык</span>
+                    <div class="aside-lang-city-inner">
+                        <a href="#" class="aside-language active">RU</a>
+                        <a href="#" class="aside-language">UA</a>
+                    </div>
+                </li>
+                <li>
+                    <span>Город</span>
+                    <div class="aside-lang-city-inner">
+                        <button type="button">Запорожье<i class="fas fa-angle-down"></i></button>
+                    </div>
+                </li>
+            </ul>
+            <div class="aside-item aside-inner">
+                <div class="aside-inner aside-links-block">
+                    <div class="aside-title">
+                        <h1>Информация о компании</h1>
+                    </div>
+                    <ul class="aside-links">
+                        <li><a href="#" class="aside-link">О нас</a></li>
+                        <li><a href="#" class="aside-link">Условия использования сайта</a></li>
+                        <li><a href="#" class="aside-link">Вакансии</a></li>
+                        <li><a href="#" class="aside-link">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="aside-inner aside-links-block">
+                    <div class="aside-title">
+                        <h1>Помощь</h1>
+                    </div>
+                    <ul class="aside-links">
+                        <li><a href="#" class="aside-link">Доставка и оплата</a></li>
+                        <li><a href="#" class="aside-link">Кредит</a></li>
+                        <li><a href="#" class="aside-link">Гарантия</a></li>
+                        <li><a href="#" class="aside-link">Возврат средств</a></li>
+                        <li><a href="#" class="aside-link">Сервисные центры</a></li>
+                    </ul>
+                </div>
+                <div class="aside-inner aside-links-block">
+                    <div class="accordion">
+                        <div class="aside-title">
+                            <h1>Сервисы</h1>
+                            <label class="accordion-toggle" for="accordion-check1">
+                                <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </label>
+                        </div>
+                        <input type="checkbox" id="accordion-check1">
+                        <div class="accordion-content">
+                            <ul class="aside-links">
+                                <li><a href="#" class="aside-link">Доставка и оплата</a></li>
+                                <li><a href="#" class="aside-link">Кредит</a></li>
+                                <li><a href="#" class="aside-link">Гарантия</a></li>
+                                <li><a href="#" class="aside-link">Возврат средств</a></li>
+                                <li><a href="#" class="aside-link">Сервисные центры</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="aside-inner aside-links-block">
+                    <div class="accordion">
+                        <div class="aside-title">
+                            <h1>Партнерам</h1>
+                            <label class="accordion-toggle" for="accordion-check2">
+                                <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </label>
+                        </div>
+                        <input type="checkbox" id="accordion-check2">
+                        <div class="accordion-content">
+                            <ul class="aside-links">
+                                <li><a href="#" class="aside-link">Продавать на Вилке</a></li>
+                                <li><a href="#" class="aside-link">Сотрудничество с нами</a></li>
+                                <li><a href="#" class="aside-link">Франчайзинг</a></li>
+                                <li><a href="#" class="aside-link">Аренда помещений</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="aside-item aside-inner">
+                <div class="aside-apps">
+                    <div class="aside-title">
+                        <h1>Скачивайте наши приложения</h1>
+                    </div>
+                    <div class="aside-apps-inner">
+                        <a href="#"><img src="src/img/button-google-play-ru.svg"></a>
+                        <a href="#"><img src="src/img/button-appstore-ru.svg"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="aside-item aside-inner">
+                <div class="aside-socs">
+                    <div class="aside-title">
+                        <h1>Скачивайте наши приложения</h1>
+                    </div>
+                    <div class="aside-socs-inner socs">
+                        <a href="#"><i class="fab fa-facebook-f socs-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter socs-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube socs-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram socs-instagram"></i></a>
+                        <a href="#"><i class="fab fa-viber socs-viber"></i></a>
+                        <a href="#"><i class="fab fa-telegram-plane socs-telegram"></i></a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="header-inner container">
+            <div class="btn-bg aside-menu-toggle">
+                <div class="aside-menu-toggle-item"></div>
+            </div>
+            
+            <a class=logo href=#><img src="src/img/whitefontlogo.svg"></a>
+
+            <button class="btn-Catalog openCatalog"><i class="fas fa-book"></i>Каталог</button>
+            <form class="search">
+                <div class="search-field">
+                    <i class="fas fa-search"></i><input type="search" placeholder="Я ищу...">
+                </div>
+                <input class="search-btn" type="submit" value="Найти">
+            </form>
+
+            <div class="lang-container">
+                <a href="#" class="link lang-item lang-item-active">RU</a>
+                <a href="#" class="link lang-item">UA</a>
+            </div>
+
+            <a href="#" class="btn-bg premium">
+                <p>Попробуйте</p>
+                <img src="src/img/prem.svg" alt="GACHI">
+            </a>
+            <a class="btn-bg btn-header">
+                <i class="far fa-list-alt"></i>
+            </a>
+            <button class="btn-bg btn-header toLogin-main">
+                <i class="far fa-user"></i>
+            </button>
+            <button class="btn-bg btn-header">
+                <i class="fas fa-balance-scale"></i>
+            </button>
+            <a class="btn-bg btn-header">
+                <i class="far fa-heart"></i>
+            </a>
+            <button class="btn-bg btn-header">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="catalog">
+                <div id="categories" class="categories-inner">
+                    <ul>
+                        <li>
+                            <a href="ssd.html" class="categories-item categories-item-hovered">
+                                <span class="categories-item-icon"><i class="fas fa-laptop"></i></span><span class="link">Ноутбуки и компьютеры<span class="angel"><i class="fas fa-angle-right"></i></span></span>
+                            </a>
+                            <div class="category-inner">
+                                <div class="category-main">
+                                    <div class="category-aside">
+                                        <div class="category-item">
+                                            <h2 class="category-title grey_title">Популярные категории</h2>
+                                            <ul>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Ноутбуки</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Планшеты</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Видеокарты</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Жесткие диски и дисковые массивы</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Мониторы</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Компьютеры, неттопы, моноблоки</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Процессоры</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">SSD</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">PlayStation 5</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">МФУ/Принтеры</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Память</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Материнские платы</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Мыши</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Маршрутизаторы</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Акустические системы</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Клавиатуры</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Блоки питания</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Корпуса</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Проекторы</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Флеш память USB</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Источники бесперебойного питания</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Системы охлаждения</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Игровые консоли и детские приставки</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Сумки, рюкзаки и чехлы для ноутбука</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Стабилизаторы напряжения</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="category-aside">
+                                        <div class="category-aside-inner">
+                                            <div class="category-item">
+                                                <ul>
+                                                    <li class="category-group">
+                                                        <a href="#" class="link ulink category-title">Ноутбуки</a>
+                                                        <ul>
+                                                            <li class="category-link"><a href="#" class="link ulink">Asus</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Acer</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">HP (Hewlett Packard)</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Lenovo</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Dell</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Apple</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="category-group">
+                                                        <a href="#" class="link ulink category-title">Аксессуары для ноутбуков и ПК</a>
+                                                        <ul>
+                                                            <li class="category-link"><a href="#" class="link ulink">Флеш память USB</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Сумки и рюкзаки для ноутбуков</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Подставки и столики для ноутбуков</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Веб-камеры</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Универсальные мобильные батареи</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Кабели и переходники</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="category-group">
+                                                        <a href="#" class="link ulink category-title">Планшеты</a>
+                                                    </li>
+                                                    <li class="category-group">
+                                                        <a href="#" class="link ulink category-title">Аксессуары и планшеты</a>
+                                                        <ul>
+                                                            <li class="category-link"><a href="#" class="link ulink">Чехлы и клавиатуры для планшетов</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Защитные пленки и стекла</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="category-group">
+                                                        <a href="#" class="link ulink category-title">Графические планшеты</a>
+                                                    </li>
+                                                    <li class="category-group">
+                                                        <a href="#" class="link ulink category-title">Электронные книги</a>
+                                                        <ul>
+                                                            <li class="category-link"><a href="#" class="link ulink">Аксессуары для электронных книг</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="category-group">
+                                                        <a href="#" class="link ulink category-title">Уцененные товары</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="category-item">
+                                                <ul>
+                                                    <li class="category-group">
+                                                        <a href="#" class="link ulink category-title">Комплектующие</a>
+                                                        <ul>
+                                                            <li class="category-link"><a href="#" class="link ulink">Видеокарты</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Жесткие диски и дисковые массивы</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Процессоры</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">SSD</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Память</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Материнские платы</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Блоки питания</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Корпуса</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Источники бесперебойного питания</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Системы охлаждения</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Стабилизаторы напряжения</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Оптические приводы</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Звуковые карты</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="category-group">
+                                                        <a href="#" class="link ulink category-title">Компьютеры</a>
+                                                        <ul>
+                                                            <li class="category-link"><a href="#" class="link ulink">Мониторы</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Мыши</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Клавиатуры</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Комплект: клавиатура + мышь</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Сетевые хранилища(NAS)</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="category-group">
+                                                        <a href="#" class="link ulink category-title">Серверное оборудование</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="category-item">
+                                                <ul>
+                                                    <li class="category-group">
+                                                        <a href="#" class="link ulink category-title">Оргтехника</a>
+                                                        <ul>
+                                                            <li class="category-link"><a href="#" class="link ulink">МФУ/Принтеры</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Проекторы</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Расходные материалы для притера</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Телефонные аппараты</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="category-group">
+                                                        <a href="#" class="link ulink category-title">Интерактивное оборудование</a>
+                                                    </li>
+                                                    <li class="category-group">
+                                                        <a href="#" class="link ulink category-title">Программное обеспечение</a>
+                                                        <ul>
+                                                            <li class="category-link"><a href="#" class="link ulink">Операционные системы</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Офисные приложения</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Антивирусы</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="category-group">
+                                                        <a href="#" class="link ulink category-title">Товары для геймеров</a>
+                                                        <ul>
+                                                            <li class="category-link"><a href="#" class="link ulink">PlayStation</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Игровые консоли и приставки</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Джойстики и аксессуары</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Игры</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Игровые поверхности</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="category-group">
+                                                        <a href="#" class="link ulink category-title">Сетевое оборудование</a>
+                                                        <ul>
+                                                            <li class="category-link"><a href="#" class="link ulink">Патч-корды</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Маршрутизаторы</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">IP-камеры</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Коммутаторы</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Беспроводные точки доступа</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="category-item">
+                                                БАНЕР
+                                            </div>
+                                        </div>
+                                        <div class="category-footer">
+                                            <a class="link ulink category-footer-item category-title">Все категории</a>
+                                            <div class="brends category-footer-item">
+                                                <a class="brends-item"><img src="src/img/brends/acer.jpg"></a>
+                                                <a class="brends-item"><img src="src/img/brends/apple.png"></a>
+                                                <a class="brends-item"><img src="src/img/brends/asus.png"></a>
+                                                <a class="brends-item"><img src="src/img/brends/lenovo.png"></a>
+                                                <a class="brends-item"><img src="src/img/brends/logitech.png"></a>
+                                                <a class="brends-item"><img src="src/img/brends/rozetka.png"></a>
+                                                <a class="brends-item"><img src="src/img/brends/samsung.png"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="categories-item">
+                                <span class="categories-item-icon"><i class="fas fa-mobile-alt"></i></span><span class="link">Смартфоны, ТВ и электроника<span class="angel"><i class="fas fa-angle-right"></i></span></span>
+                            </a>
+                            <div class="category-inner">
+                                <div class="category-main">
+                                    <div class="category-aside">
+                                        <div class="category-item">
+                                            <h2 class="category-title grey_title">Популярные категории</h2>
+                                            <ul>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Мобильные телефоны</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Телевизоры</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Фотоаппараты</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Наушники</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Универсальные мобильные батареи</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Карты памяти</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Смартфоны Apple</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Видеокамеры</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Электронные книги</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Apple Watch</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Видеорегистраторы</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Подставки, крепления для ТВ</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Музыкальные центры и магнитолы</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Домашние кинотеатры</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Blu-ray/DVD/HD/-медиаплееры</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Смарт-часы</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Кабели и переходники</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Объективы</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">GPS навигаторы</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Моноподы для селфи и аксессуары</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Аккумуляторы и батарейки</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Чехлы для мобильных телефонов</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Фитнес-браслеты</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Акустика Hi-Fi</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">Защитные пленки и стекла</a></li>
+                                                <li class="category-link category-link-grey"><a href="#" class="link ulink">ТВ-антенны и ресиверы</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="category-aside">
+                                        <div class="category-aside-inner">
+                                            <div class="category-item">
+                                                <ul>
+                                                    <li class="category-group">
+                                                        <a href="#" class="link ulink category-title">Телефоны</a>
+                                                        <ul>
+                                                            <li class="category-link"><a href="#" class="link ulink">Смартфоны</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Кнопочные телефоны</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Офисные телефоны</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="category-group">
+                                                        <a href="#" class="link ulink category-title">Аксессуары для мобильных телефонов</a>
+                                                        <ul>
+                                                            <li class="category-link"><a href="#" class="link ulink">Универсальные мобильные батареи</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Карты памяти</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Чехлы для мобильных телефонов</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Защитные пленки и стекла</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Моноподы для селфи</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Гарнитуры</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">3D и VR очки</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Держатели</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Кабели синхронизации</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Гарнитуры Bluetooth</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Мобильная связь и интернет</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="category-group">
+                                                        <a href="#" class="link ulink category-title">Телевизоры и аксессуары</a>
+                                                        <ul>
+                                                            <li class="category-link"><a href="#" class="link ulink">Телевизоры</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Подставки, крепления для ТВ</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Кабели и переходники</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">ТВ-антенны и ресиверы</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Универсальные пульты ДУ</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Аксессуары для ТВ</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="category-group">
+                                                        <a href="#" class="link ulink category-title">Уцененные товары</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="category-item">
+                                                <ul>
+                                                    <li class="category-group">
+                                                        <a href="#" class="link ulink category-title">Фото и видео</a>
+                                                        <ul>
+                                                            <li class="category-link"><a href="#" class="link ulink">Фотоаппараты</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Видеокамеры</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Объективы</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Экшн-камеры и аксессуары</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Аккумуляторы и батарейки</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Штативы</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Зарядные устройства</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Вспышки</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Аккумуляторы для фото- и видеокамер</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Студийное оборудование</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Сумки и чехлы</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="category-group">
+                                                        <a href="#" class="link ulink category-title">Аудио и домашние кинотеатры</a>
+                                                        <ul>
+                                                            <li class="category-link"><a href="#" class="link ulink">DVD/HD-медиаплееры</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Музыкальные центры</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Домашние кинотеатры</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Активные акустические системы</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Акустика Hi-Fi</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">AV-ресиверы</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="category-group">
+                                                        <a href="#" class="link ulink category-title">Проекционное оборудование</a>
+                                                        <ul>
+                                                            <li class="category-link"><a href="#" class="link ulink">Проекторы</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Экраны</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="category-group">
+                                                        <a href="#" class="link ulink category-title">Услуги</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="category-item">
+                                                <ul>
+                                                    <li class="category-group">
+                                                        <a href="#" class="link ulink category-title">Портативная электроника</a>
+                                                        <ul>
+                                                            <li class="category-link"><a href="#" class="link ulink">Планшеты</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Наушники</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Электронные книги</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Смарт-часы</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Фитнес-браслеты</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">MP3-плееры</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Диктофоры</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Спортивные часы</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Аксессуары для планшетов</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Велокомпьютеры</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Портативная акустика</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Внешние жесткие диски</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="category-group">
+                                                        <a href="#" class="link ulink category-title">Автоэлектроника</a>
+                                                        <ul>
+                                                            <li class="category-link"><a href="#" class="link ulink">Видеорегистраторы</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">GPS навигаторы</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Автозвук</a></li>
+                                                            <li class="category-link"><a href="#" class="link ulink">Автосигнализация</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="category-group">
+                                                        <a href="#" class="link ulink category-title">PlayStation</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="category-item">
+                                                БАНЕР
+                                            </div>
+                                        </div>
+                                        <div class="category-footer">
+                                            <a class="link ulink category-footer-item category-title">Все категории</a>
+                                            <div class="brends category-footer-item">
+                                                <a class="brends-item"><img src="src/img/brends/acer.jpg"></a>
+                                                <a class="brends-item"><img src="src/img/brends/apple.png"></a>
+                                                <a class="brends-item"><img src="src/img/brends/asus.png"></a>
+                                                <a class="brends-item"><img src="src/img/brends/lenovo.png"></a>
+                                                <a class="brends-item"><img src="src/img/brends/logitech.png"></a>
+                                                <a class="brends-item"><img src="src/img/brends/rozetka.png"></a>
+                                                <a class="brends-item"><img src="src/img/brends/samsung.png"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="categories-item">
+                                <span class="categories-item-icon"><i class="fas fa-gamepad"></i></span><span class="link">Товары для геймеров<span class="angel"><i class="fas fa-angle-right"></i></span></span>
+                            </a>
+                            <div class="category-inner">
+
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="categories-item">
+                                <span class="categories-item-icon"><i class="fas fa-blender"></i></span><span class="link">Бытовая техника<span class="angel"><i class="fas fa-angle-right"></i></span></span>
+                            </a>
+                            <div class="category-inner">
+                                
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="categories-item">
+                                <span class="categories-item-icon"><i class="fas fa-couch"></i></span><span class="link">Товары для дома<span class="angel"><i class="fas fa-angle-right"></i></span></span>
+                            </a>
+                            <div class="category-inner">
+                                
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="categories-item">
+                                <span class="categories-item-icon"><i class="fas fa-tools"></i></span><span class="link">Инструменты и автотовары<span class="angel"><i class="fas fa-angle-right"></i></span></span>
+                            </a>
+                            <div class="category-inner">
+                                
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="categories-item">
+                                <span class="categories-item-icon"><i class="fas fa-bath"></i></span><span class="link">Сантехника и ремонт<span class="angel"><i class="fas fa-angle-right"></i></span></span>
+                            </a>
+                            <div class="category-inner">
+                                
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="categories-item">
+                                <span class="categories-item-icon"><i class="fas fa-faucet"></i></span><span class="link">Дача, сад и огород<span class="angel"><i class="fas fa-angle-right"></i></span></span>
+                            </a>
+                            <div class="category-inner">
+                                
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="categories-item">
+                                <span class="categories-item-icon"><i class="fas fa-volleyball-ball"></i></span><span class="link">Спорт и увлечения<span class="angel"><i class="fas fa-angle-right"></i></span></span>
+                            </a>
+                            <div class="category-inner">
+                                
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="categories-item">
+                                <span class="categories-item-icon"><i class="fas fa-tshirt"></i></span><span class="link">Одежда, обувь и украшения<span class="angel"><i class="fas fa-angle-right"></i></span></span>
+                            </a>
+                            <div class="category-inner">
+                                
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="categories-item">
+                                <span class="categories-item-icon"><i class="fas fa-air-freshener"></i></span><span class="link">Красота и здоровье<span class="angel"><i class="fas fa-angle-right"></i></span></span>
+                            </a>
+                            <div class="category-inner">
+                                
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="categories-item">
+                                <span class="categories-item-icon"><i class="fas fa-baby"></i></span><span class="link">Детские товары<span class="angel"><i class="fas fa-angle-right"></i></span></span>
+                            </a>
+                            <div class="category-inner">
+                                
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="categories-item">
+                                <span class="categories-item-icon"><i class="fas fa-paperclip"></i></span><span class="link">Канцтовары и книги<span class="angel"><i class="fas fa-angle-right"></i></span></span>
+                            </a>
+                            <div class="category-inner">
+                                
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="categories-item">
+                                <span class="categories-item-icon"><i class="fas fa-glass-martini-alt"></i></span><span class="link">Алкогольные напитки и продукты<span class="angel"><i class="fas fa-angle-right"></i></span></span>
+                            </a>
+                            <div class="category-inner">
+                                
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="categories-item">
+                                <span class="categories-item-icon"><i class="fas fa-percent"></i></span><span class="link">Товары для бизнеса<span class="angel"><i class="fas fa-angle-right"></i></span></span>
+                            </a>
+                            <div class="category-inner">
+                                
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="categories-item">
+                                <span class="categories-item-icon"><i class="fas fa-tasks"></i></span><span class="link">Услуги и сервисы<span class="angel"><i class="fas fa-angle-right"></i></span></span>
+                            </a>
+                            <div class="category-inner">
+                                
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content">
+                <div class="content-item">
+                    <div class="aside-inner categories-inner">
+                        <a href="ssd.html" class="categories-item">
+                            <span class="categories-item-icon"><i class="fas fa-laptop"></i></span><span class="link ulink">Ноутбуки и компьютеры</span>
+                        </a>
+                        <a href="#" class="categories-item">
+                            <span class="categories-item-icon"><i class="fas fa-mobile-alt"></i></span><span class="link ulink">Смартфоны, ТВ и электроника</span>
+                        </a>
+                        <a href="#" class="categories-item">
+                            <span class="categories-item-icon"><i class="fas fa-gamepad"></i></span><span class="link ulink">Товары для геймеров</span>
+                        </a>
+                        <a href="#" class="categories-item">
+                            <span class="categories-item-icon"><i class="fas fa-blender"></i></span><span class="link ulink">Бытовая техника</span>
+                        </a>
+                        <a href="#" class="categories-item">
+                            <span class="categories-item-icon"><i class="fas fa-couch"></i></span><span class="link ulink">Товары для дома</span>
+                        </a>
+                        <a href="#" class="categories-item">
+                            <span class="categories-item-icon"><i class="fas fa-tools"></i></span><span class="link ulink">Инструменты и автотовары</span>
+                        </a>
+                        <a href="#" class="categories-item">
+                            <span class="categories-item-icon"><i class="fas fa-bath"></i></span><span class="link ulink">Сантехника и ремонт</span>
+                        </a>
+                        <a href="#" class="categories-item">
+                            <span class="categories-item-icon"><i class="fas fa-faucet"></i></span><span class="link ulink">Дача, сад и огород</span>
+                        </a>
+                        <a href="#" class="categories-item">
+                            <span class="categories-item-icon"><i class="fas fa-volleyball-ball"></i></span><span class="link ulink">Спорт и увлечения</span>
+                        </a>
+                        <a href="#" class="categories-item">
+                            <span class="categories-item-icon"><i class="fas fa-tshirt"></i></span><span class="link ulink">Одежда, обувь и украшения</span>
+                        </a>
+                        <a href="#" class="categories-item">
+                            <span class="categories-item-icon"><i class="fas fa-air-freshener"></i></span><span class="link ulink">Красота и здоровье</span>
+                        </a>
+                        <a href="#" class="categories-item">
+                            <span class="categories-item-icon"><i class="fas fa-baby"></i></span><span class="link ulink">Детские товары</span>
+                        </a>
+                        <a href="#" class="categories-item">
+                            <span class="categories-item-icon"><i class="fas fa-paperclip"></i></span><span class="link ulink">Канцтовары и книги</span>
+                        </a>
+                        <a href="#" class="categories-item">
+                            <span class="categories-item-icon"><i class="fas fa-glass-martini-alt"></i></span><span class="link ulink">Алкогольные напитки и продукты</span>
+                        </a>
+                        <a href="#" class="categories-item">
+                            <span class="categories-item-icon"><i class="fas fa-percent"></i></span><span class="link ulink">Товары для бизнеса</span>
+                        </a>
+                        <a href="#" class="categories-item">
+                            <span class="categories-item-icon"><i class="fas fa-tasks"></i></span><span class="link ulink">Услуги и сервисы</span>
+                        </a>
+                    </div>
+                    <div class="aside-inner support">
+                        <a href="#" class="support-item"><i class="far fa-question-circle"></i><span class="link">Справочный центр</span></a>
+                        <div class="support-auth">
+                            <h1>Добро пожаловать!</h1>
+                            <p>Войдите, чтобы получать рекомендации, персональные бонусы и скидки.</p>
+                            <button class="toLogin-main" type="button">Войдите в личный кабинет</button>
+                        </div>
+                    </div>
+                    <div class="aside-inner auth-links-inner">
+                        <div class="auth-links-icon"><i class="far fa-user"></i></div>
+                        <p class="auth-links-username">Николай Петрович</p>
+                        <ul>
+                            <li class="auth-links-item"><a href="#" class="link">Списки желаний</a></li>
+                            <li class="auth-links-item"><a href="#" class="link">Корзина</a></li>
+                            <li class="auth-links-item"><a href="#" class="link">Мои заказы</a></li>
+                            <li class="auth-links-item"><a href="#" class="link">Мои отзывы</a></li>
+                            <li class="auth-links-item"><a href="#" class="link">Просмотренные товары</a></li>
+                            <li class="auth-links-item"><a href="#" class="link">Рассылки</a></li>
+                            <li class="auth-links-item"><a href="#" class="link">Участие в акциях</a></li>
+                            <li class="auth-links-item"><a href="#" class="link">Моя переписка</a></li>
+                            <li class="auth-links-item"><a href="#" class="link">Мой бонусный счёт</a></li>
+                            <li class="auth-links-item"><a href="#" class="link">Подписка Premium</a></li>
+                            <li class="auth-links-item"><a href="#" class="link">Забрать заказ</a></li>
+                            <li class="auth-links-item"><a href="#" class="link">Сравнение</a></li>
+                            <li class="auth-links-item"><a href="#" class="link">Выход</a></li>
+                        </ul>
+                    </div>
+                    <div class="aside-inner aside-block download-inner ">
+                        <h3 class="inner-title14">Устанавливайте наши приложения</h3>
+                        <a href="#">
+                            <img src="src/img/button-google-play-ru.svg">
+                        </a>
+                        <a href="#">
+                            <img src="src/img/button-appstore-ru.svg">
+                        </a>
+                    </div>
+                    <div class="aside-inner aside-block socs">
+                        <h3 class="inner-title14">Мы в социальных сетях</h3>
+                        <a href="#"><i class="fab fa-facebook-f socs-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter socs-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube socs-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram socs-instagram"></i></a>
+                        <a href="#"><i class="fab fa-viber socs-viber"></i></a>
+                        <a href="#"><i class="fab fa-telegram-plane socs-telegram"></i></a>
+                    </div>
+                    <div class="aside-inner aside-block">
+                        <div>
+                            <h3 class="inner-title12">Помощь</h3>
+                            <ul class="aside-list">
+                                <li><a href="#" class="link">Доставка и оплата</a></li>
+                                <li><a href="#" class="link">Кредит</a></li>
+                                <li><a href="#" class="link">Гарантия</a></li>
+                                <li><a href="#" class="link">Возврат товара</a></li>
+                                <li><a href="#" class="link">Сервисные центры</a></li>
+                                <li><a href="#" class="link">Отследить заказ</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="inner-title12">Информация о компании</h3>
+                            <ul class="aside-list">
+                                <li><a href="#" class="link">О нас</a></li>
+                                <li><a href="#" class="link">Условия использования сайта</a></li>
+                                <li><a href="#" class="link">Вакансии</a></li>
+                                <li><a href="#" class="link">Контакты</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="inner-title12">Сервисы</h3>
+                            <ul class="aside-list">
+                                <li><a href="#" class="link">Бонусный счет</a></li>
+                                <li><a href="#" class="link">Rozetka Premium</a></li>
+                                <li><a href="#" class="link">Подарочные сертификаты</a></li>
+                                <li><a href="#" class="link">Rozetka Обмен</a></li>
+                                <li><a href="#" class="link">Туры и отдых</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="inner-title12">Партнерам</h3>
+                            <ul class="aside-list">
+                                <li><a href="#" class="link">Франчайзинг</a></li>
+                                <li><a href="#" class="link">Продавать на Розетке</a></li>
+                                <li><a href="#" class="link">Сотрудничество с нами</a></li>
+                                <li><a href="#" class="link">Логотип и стайлгайд</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="aside-inner-footer aside-block">
+                        <div>
+                            <a href="#"><img src="src/img/mastercard-logo.svg"></a>
+                            <a href="#"><img src="src/img/visa-logo.svg"></a>
+                        </div>
+                        <p class="aside-inner-copyright">ТМ используется на основании лицензии правообладателя RozetkaLTD.</p>
+                        <p>© Интернет-магазин «Розетка™»<br>2001–2021</p>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="slider-inner">
+                        <input checked type="radio" name="respond" id="desktop">
+                        <article id="slider">                         
+                            <div class="slides">
+                                <div class="overflow">
+                                    <div id="image">
+                                        <article><img src="src/img/1.jpg"></article>
+                                        <article><img src="src/img/2.jpg"></article>
+                                        <article><img src="src/img/3.jpg"></article>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="slider-button-prev"><i class="fas fa-angle-left"></i></button>
+                            <button type="button" class="slider-button-next"><i class="fas fa-angle-right"></i></button>
+                        </article>
+                        <div class="slider-counter">
+                            <span id="slider-counter-inner"></span>
+                        </div>
+                        <div class="slider-buttons">
+                            <a href="#" class="link slider-button">Все акции<span class="grey_text">0</span></a>
+                        </div>
+                    </div>
+
+                    <div class="products">
+                        <h1 class="products_title">Последние просмотренные товары</h1>
+                        <div class="products_inner">
+                            <div class="products_item">
+                                
+                            </div>
+                        </div>    
+                    </div>
+                    <div class="products">
+                        <h1 class="products_title">Больше товаров для выбора</h1>
+                        <div class="products_inner">
+                            <div class="products_item">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script src="src/js/app.js"></script>
+</body>
+</html>
