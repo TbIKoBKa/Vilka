@@ -54,7 +54,8 @@ let toRegister = () =>
 
 let toggleScroll = () =>
 {
-    document.querySelector('body').style.overflowY = (document.querySelector('body').style.overflowY == 'hidden') ? 'scroll' : 'hidden';
+    document.body.style.overflowY = ( document.body.style.overflowY == 'hidden') ? 'scroll' : 'hidden';
+    console.log(document.body.style.overflowY)
 }
 
 document.querySelectorAll('.toLogin').forEach((button) =>

@@ -584,11 +584,6 @@ header
     overflow-y: auto;
 }
 
-.modal-scroll-block::-webkit-scrollbar-thumb
-{
-    background-color: inherit
-}
-
 .modal-main form
 {
     width: 60%;
@@ -759,18 +754,11 @@ header
     margin-top: 16px;
 }
 
-.logo
-{
-    width: auto;
-    position: relative;
-    max-height: inherit;
-}
-
-.logo img
-{
-    max-height: 40px;
-    height: max-content
-}
+.st0{fill:#39B54A;stroke:#000000;stroke-miterlimit:10;}
+.st1{stroke:#000000;stroke-miterlimit:10;}
+.st2{stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+.st3{fill:none;}
+.st4{fill:#FFFFFF;}
 
 .btn-Catalog
 {
